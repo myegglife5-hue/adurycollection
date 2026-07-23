@@ -1,1 +1,328 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Adury Collection</title>
 
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Adury Collection
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="#">Category</a>
+
+<a href="#">Offer</a>
+
+<a href="cart.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="cart-count">0</span>
+
+</a>
+
+</nav>
+
+</header>
+
+<section class="shop-banner">
+
+<h1>Premium Three Piece Collection</h1>
+
+<p>
+পাইকারি ও খুচরা বিক্রয় • সারা বাংলাদেশে ডেলিভারি
+</p>
+
+</section>
+
+<section class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="🔍 প্রোডাক্ট খুঁজুন..."
+onkeyup="searchProduct()">
+
+</section>
+
+<section class="products">
+
+<div class="product-card">
+
+<img src="images/product1.jpg">
+
+<div class="product-info">
+
+<h3>Premium Cotton Three Piece</h3>
+
+<div class="price">
+
+৳650
+
+<span class="old-price">
+
+৳850
+
+</span>
+
+</div>
+
+<a href="product.html" class="btn">
+
+বিস্তারিত দেখুন
+
+</a>
+
+<button class="buy-btn"
+
+onclick="addToCart(
+
+1,
+
+'Premium Cotton Three Piece',
+
+650,
+
+'images/product1.jpg'
+
+)">
+
+🛒 এখনই অর্ডার করুন
+
+</button>
+
+</div>
+
+</div>
+<!-- Product 2 -->
+
+<div class="product-card">
+
+<img src="images/product2.jpg">
+
+<div class="product-info">
+
+<h3>Kashmiri Three Piece</h3>
+
+<div class="price">
+
+৳750
+
+<span class="old-price">৳950</span>
+
+</div>
+
+<a href="product.html" class="btn">
+
+বিস্তারিত দেখুন
+
+</a>
+
+<button class="buy-btn"
+
+onclick="addToCart(
+2,
+'Kashmiri Three Piece',
+750,
+'images/product2.jpg'
+)">
+
+🛒 এখনই অর্ডার করুন
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 3 -->
+
+<div class="product-card">
+
+<img src="images/product3.jpg">
+
+<div class="product-info">
+
+<h3>Digital Print Three Piece</h3>
+
+<div class="price">
+
+৳690
+
+<span class="old-price">৳890</span>
+
+</div>
+
+<a href="product.html" class="btn">
+
+বিস্তারিত দেখুন
+
+</a>
+
+<button class="buy-btn"
+
+onclick="addToCart(
+3,
+'Digital Print Three Piece',
+690,
+'images/product3.jpg'
+)">
+
+🛒 এখনই অর্ডার করুন
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 4 -->
+
+<div class="product-card">
+
+<img src="images/product4.jpg">
+
+<div class="product-info">
+
+<h3>Luxury Cotton Three Piece</h3>
+
+<div class="price">
+
+৳850
+
+<span class="old-price">৳1050</span>
+
+</div>
+
+<a href="product.html" class="btn">
+
+বিস্তারিত দেখুন
+
+</a>
+
+<button class="buy-btn"
+
+onclick="addToCart(
+4,
+'Luxury Cotton Three Piece',
+850,
+'images/product4.jpg'
+)">
+
+🛒 এখনই অর্ডার করুন
+
+</button>
+
+</div>
+
+</div>
+  <!-- Product 5 -->
+
+<div class="product-card">
+
+<img src="images/product5.jpg" alt="Product 5">
+
+<div class="product-info">
+
+<h3>Exclusive Three Piece</h3>
+
+<div class="price">
+
+৳950
+
+<span class="old-price">৳1150</span>
+
+</div>
+
+<a href="product.html" class="btn">
+বিস্তারিত দেখুন
+</a>
+
+<button class="buy-btn"
+onclick="addToCart(
+5,
+'Exclusive Three Piece',
+950,
+'images/product5.jpg'
+)">
+🛒 এখনই অর্ডার করুন
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 6 -->
+
+<div class="product-card">
+
+<img src="images/product6.jpg" alt="Product 6">
+
+<div class="product-info">
+
+<h3>Designer Cotton Three Piece</h3>
+
+<div class="price">
+
+৳1050
+
+<span class="old-price">৳1250</span>
+
+</div>
+
+<a href="product.html" class="btn">
+বিস্তারিত দেখুন
+</a>
+
+<button class="buy-btn"
+onclick="addToCart(
+6,
+'Designer Cotton Three Piece',
+1050,
+'images/product6.jpg'
+)">
+🛒 এখনই অর্ডার করুন
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Adury Collection</h3>
+
+<p>Premium Three Piece Wholesale & Retail</p>
+
+<p>📞 01969080416</p>
+
+<p>WhatsApp Order Available</p>
+
+<p style="margin-top:20px;">
+© 2026 Adury Collection. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
