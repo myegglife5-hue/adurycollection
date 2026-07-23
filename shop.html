@@ -6,8 +6,7 @@
 <title>Shop | Adury Collection</title>
 
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <script src="script.js" defer></script>
 
@@ -24,28 +23,19 @@ Adury Collection
 <nav>
 
 <a href="index.html">Home</a>
-
 <a href="shop.html">Shop</a>
-
-<a href="#">Category</a>
-
-<a href="#">Offer</a>
-
 <a href="cart.html">
-
 <i class="fa-solid fa-cart-shopping"></i>
-
 <span id="cart-count">0</span>
-
 </a>
 
 </nav>
 
 </header>
 
-<section class="shop-banner">
+<section class="hero">
 
-<h1>Premium Three Piece Collection</h1>
+<h1>🛍️ আমাদের সকল থ্রী পিস কালেকশন</h1>
 
 <p>
 পাইকারি ও খুচরা বিক্রয় • সারা বাংলাদেশে ডেলিভারি
@@ -53,21 +43,24 @@ Adury Collection
 
 </section>
 
-<section class="search-box">
+<section style="padding:30px;">
 
 <input
-type="text"
 id="search"
-placeholder="🔍 প্রোডাক্ট খুঁজুন..."
-onkeyup="searchProduct()">
+type="text"
+placeholder="🔍 আপনার পছন্দের ড্রেস খুঁজুন..."
+onkeyup="searchProduct()"
+style="width:100%;padding:15px;font-size:18px;border-radius:10px;border:1px solid #ddd;">
 
 </section>
 
 <section class="products">
 
+<!-- Product 1 -->
+
 <div class="product-card">
 
-<img src="images/product1.jpg">
+<img src="images/product1.jpg" alt="">
 
 <div class="product-info">
 
@@ -94,15 +87,10 @@ onkeyup="searchProduct()">
 <button class="buy-btn"
 
 onclick="addToCart(
-
 1,
-
 'Premium Cotton Three Piece',
-
 650,
-
 'images/product1.jpg'
-
 )">
 
 🛒 এখনই অর্ডার করুন
@@ -112,11 +100,12 @@ onclick="addToCart(
 </div>
 
 </div>
+
 <!-- Product 2 -->
 
 <div class="product-card">
 
-<img src="images/product2.jpg">
+<img src="images/product2.jpg" alt="">
 
 <div class="product-info">
 
@@ -126,7 +115,11 @@ onclick="addToCart(
 
 ৳750
 
-<span class="old-price">৳950</span>
+<span class="old-price">
+
+৳950
+
+</span>
 
 </div>
 
@@ -152,12 +145,11 @@ onclick="addToCart(
 </div>
 
 </div>
-
-<!-- Product 3 -->
+  <!-- Product 3 -->
 
 <div class="product-card">
 
-<img src="images/product3.jpg">
+<img src="images/product3.jpg" alt="">
 
 <div class="product-info">
 
@@ -172,22 +164,17 @@ onclick="addToCart(
 </div>
 
 <a href="product.html" class="btn">
-
 বিস্তারিত দেখুন
-
 </a>
 
 <button class="buy-btn"
-
 onclick="addToCart(
 3,
 'Digital Print Three Piece',
 690,
 'images/product3.jpg'
 )">
-
 🛒 এখনই অর্ডার করুন
-
 </button>
 
 </div>
@@ -198,7 +185,7 @@ onclick="addToCart(
 
 <div class="product-card">
 
-<img src="images/product4.jpg">
+<img src="images/product4.jpg" alt="">
 
 <div class="product-info">
 
@@ -213,36 +200,32 @@ onclick="addToCart(
 </div>
 
 <a href="product.html" class="btn">
-
 বিস্তারিত দেখুন
-
 </a>
 
 <button class="buy-btn"
-
 onclick="addToCart(
 4,
 'Luxury Cotton Three Piece',
 850,
 'images/product4.jpg'
 )">
-
 🛒 এখনই অর্ডার করুন
-
 </button>
 
 </div>
 
 </div>
-  <!-- Product 5 -->
+
+<!-- Product 5 -->
 
 <div class="product-card">
 
-<img src="images/product5.jpg" alt="Product 5">
+<img src="images/product5.jpg" alt="">
 
 <div class="product-info">
 
-<h3>Exclusive Three Piece</h3>
+<h3>Exclusive Cotton Three Piece</h3>
 
 <div class="price">
 
@@ -259,7 +242,7 @@ onclick="addToCart(
 <button class="buy-btn"
 onclick="addToCart(
 5,
-'Exclusive Three Piece',
+'Exclusive Cotton Three Piece',
 950,
 'images/product5.jpg'
 )">
@@ -274,11 +257,11 @@ onclick="addToCart(
 
 <div class="product-card">
 
-<img src="images/product6.jpg" alt="Product 6">
+<img src="images/product6.jpg" alt="">
 
 <div class="product-info">
 
-<h3>Designer Cotton Three Piece</h3>
+<h3>Designer Three Piece</h3>
 
 <div class="price">
 
@@ -295,7 +278,7 @@ onclick="addToCart(
 <button class="buy-btn"
 onclick="addToCart(
 6,
-'Designer Cotton Three Piece',
+'Designer Three Piece',
 1050,
 'images/product6.jpg'
 )">
@@ -305,24 +288,68 @@ onclick="addToCart(
 </div>
 
 </div>
+  </section>
+
+<section class="offer">
+
+<h2>🔥 আজকের বিশেষ অফার</h2>
+
+<p>
+মাত্র ১০ পিস থেকে পাইকারি দামে থ্রী-পিস কিনুন।
+সারা বাংলাদেশে হোম ডেলিভারি।
+</p>
+
+<a href="checkout.html" class="offer-btn">
+এখনই অর্ডার করুন
+</a>
 
 </section>
 
 <footer>
 
+<div class="footer-box">
+
 <h3>Adury Collection</h3>
 
-<p>Premium Three Piece Wholesale & Retail</p>
+<p>
+Premium Three Piece Wholesale & Retail Shop
+</p>
 
-<p>📞 01969080416</p>
+<p>
+📞 01969080416
+</p>
 
-<p>WhatsApp Order Available</p>
+<p>
+📍 বাংলাদেশ
+</p>
 
-<p style="margin-top:20px;">
+<p>
+WhatsApp Order Available
+</p>
+
+</div>
+
+<div class="footer-menu">
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="cart.html">Cart</a>
+
+<a href="checkout.html">Checkout</a>
+
+</div>
+
+<p class="copy">
+
 © 2026 Adury Collection. All Rights Reserved.
+
 </p>
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
