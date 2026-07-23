@@ -1,67 +1,194 @@
-// Adury Collection - Shopping Cart
+// ===============================
+// Adury Collection
+// script.js
+// ===============================
 
+// Cart Data
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-// Add to Cart
-function addToCart(name, price, image) {
-    const product = {
-        name: name,
-        price: price,
-        image: image,
-        qty: 1
-    };
-
-    cart.push(product);
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alert("✅ " + name + " সফলভাবে কার্টে যোগ হয়েছে!");
-
-    updateCartCount();
-}
 
 // Cart Count
 function updateCartCount() {
     const count = document.getElementById("cart-count");
-
     if (count) {
         count.innerText = cart.length;
     }
 }
 
-// Search
-function searchProduct() {
+// Add To Cart
+function addToCart(id, name, price, image) {
 
-    let input = document.getElementById("search").value.toLowerCase();
+    const existing = cart.find(item => item.id === id);
 
-    let cards = document.querySelectorAll(".card");
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        cart.push({
+            id: id,
+            name: name,
+            price: price,
+            image: image,
+            qty: 1
+        });
+    }
 
-    cards.forEach(card => {
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-        let title = card.querySelector("h3").innerText.toLowerCase();
+    updateCartCount();
 
-        if (title.includes(input)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
+    alert("✅ প্রোডাক্ট সফলভাবে কার্টে যোগ হয়েছে!");
+}
+
+// Remove Item
+function removeCart(id){
+
+    cart = cart.filter(item=>item.id!==id);
+
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+    location.reload();
+
+}
+
+// Increase Qty
+function increaseQty(id){
+
+    cart.forEach(item=>{
+
+        if(item.id===id){
+
+            item.qty++;
+
+        }
+
+    });
+
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+    location.reload();
+
+}
+
+// Decrease Qty
+function decreaseQty(id){
+
+    cart.forEach(item=>{
+
+        if(item.id===id && item.qty>1){
+
+            item.qty--;
+
+        }
+
+    });
+
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+    location.reload();
+
+}
+
+// Search Product
+function searchProduct(){
+
+    let input=document.getElementById("search").value.toLowerCase();
+
+    let cards=document.querySelectorAll(".product-card");
+
+    cards.forEach(card=>{
+
+        let title=card.querySelector("h3").innerText.toLowerCase();
+
+        if(title.includes(input)){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
         }
 
     });
 
 }
 
-// Clear Cart
-function clearCart() {
+// Wishlist
+let wishlist=JSON.parse(localStorage.getItem("wishlist"))||[];
 
-    if(confirm("কার্ট খালি করতে চান?")){
+function addWishlist(id,name,price,image){
 
-        localStorage.removeItem("cart");
+    wishlist.push({
 
-        cart=[];
+        id:id,
 
-        updateCartCount();
+        name:name,
 
-        alert("🗑️ Cart Empty");
+        price:price,
+
+        image:image
+
+    });
+
+    localStorage.setItem("wishlist",JSON.stringify(wishlist));
+
+    alert("❤️ Wishlist-এ যোগ হয়েছে");
+
+}
+
+// Show Cart
+function showCart(){
+
+    let container=document.getElementById("cart-items");
+
+    if(!container) return;
+
+    let html="";
+
+    let total=0;
+
+    cart.forEach(item=>{
+
+        total+=item.price*item.qty;
+
+        html+=`
+
+<div class="cart-card">
+
+<img src="${item.image}" width="90">
+
+<h3>${item.name}</h3>
+
+<p>৳ ${item.price}</p>
+
+<div>
+
+<button onclick="decreaseQty(${item.id})">-</button>
+
+<b>${item.qty}</b>
+
+<button onclick="increaseQty(${item.id})">+</button>
+
+</div>
+
+<button onclick="removeCart(${item.id})">
+
+❌ Remove
+
+</button>
+
+</div>
+
+`;
+
+    });
+
+    container.innerHTML=html;
+
+    const totalBox=document.getElementById("total");
+
+    if(totalBox){
+
+        totalBox.innerHTML="মোট মূল্য : ৳ "+total;
 
     }
 
@@ -71,5 +198,7 @@ function clearCart() {
 window.onload=function(){
 
 updateCartCount();
+
+showCart();
 
 }
