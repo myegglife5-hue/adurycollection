@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | Adury Collection</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+background:#f4f6f9;
+font-family:Arial,sans-serif;
+}
+
+.dashboard{
+max-width:1200px;
+margin:30px auto;
+padding:20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.card h2{
+font-size:35px;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:18px;
+color:#555;
+}
+
+.btn{
+display:block;
+margin-top:15px;
+padding:12px;
+background:#00c853;
+color:#fff;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<h1 class="title">🛍️ Adury Collection Admin Panel</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>📦</h2>
+<p>Product Management</p>
+<a href="#" class="btn">Manage Products</a>
+</div>
+
+<div class="card">
+<h2>🛒</h2>
+<p>Orders</p>
+<a href="#" class="btn">View Orders</a>
+</div>
+
+<div class="card">
+<h2>👥</h2>
+<p>Customers</p>
+<a href="#" class="btn">Customer List</a>
+</div>
+
+<div class="card">
+<h2>📊</h2>
+<p>Sales Report</p>
+<a href="#" class="btn">View Report</a>
+</div>
+
+<div class="card">
+<h2>🎁</h2>
+<p>Coupon System</p>
+<a href="#" class="btn">Manage Coupons</a>
+</div>
+
+<div class="card">
+<h2>⚙️</h2>
+<p>Website Settings</p>
+<a href="#" class="btn">Settings</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
